@@ -3,6 +3,7 @@ import cv2
 from helper.common import *
 from helper.video import *
 import sys
+
 sys.path.append("../..")
 # facerec imports
 from facerec.model import PredictableModel
@@ -13,6 +14,7 @@ from facerec.validation import KFoldCrossValidation
 from facerec.serialization import save_model, load_model
 # for face detection (you can also use OpenCV2 directly):
 from facedet.detector import CascadedDetector
+
 
 class ExtendedPredictableModel(PredictableModel):
     """ Subclasses the PredictableModel to store some more
@@ -25,6 +27,7 @@ class ExtendedPredictableModel(PredictableModel):
         self.image_size = image_size
         self.subject_names = subject_names
 
+
 def get_model(image_size, subject_names):
     """ This method returns the PredictableModel which is used to learn a model
         for possible further usage. If you want to define your own model, this
@@ -35,7 +38,9 @@ def get_model(image_size, subject_names):
     # Define a 1-NN classifier with Euclidean Distance:
     classifier = NearestNeighbor(dist_metric=EuclideanDistance(), k=1)
     # Return the model as the combination:
-    return ExtendedPredictableModel(feature=feature, classifier=classifier, image_size=image_size, subject_names=subject_names)
+    return ExtendedPredictableModel(feature=feature, classifier=classifier, image_size=image_size,
+                                    subject_names=subject_names)
+
 
 def read_subject_names(path):
     """Reads the folders of a given directory, which are used to display some
@@ -52,6 +57,7 @@ def read_subject_names(path):
         for subdirname in dirnames:
             folder_names.append(subdirname)
     return folder_names
+
 
 def read_images(path, image_size=None):
     """Reads the images in a given folder, resizes images on the fly if size is given.
@@ -88,8 +94,8 @@ def read_images(path, image_size=None):
                 except:
                     print "Unexpected error:", sys.exc_info()[0]
                     raise
-            c = c+1
-    return [X,y,folder_names]
+            c = c + 1
+    return [X, y, folder_names]
 
 
 class App(object):
@@ -102,25 +108,26 @@ class App(object):
         while True:
             ret, frame = self.cam.read()
             # Resize the frame to half the original size for speeding up the detection process:
-            img = cv2.resize(frame, (frame.shape[1]/2, frame.shape[0]/2), interpolation = cv2.INTER_CUBIC)
+            img = cv2.resize(frame, (frame.shape[1] / 2, frame.shape[0] / 2), interpolation=cv2.INTER_CUBIC)
             imgout = img.copy()
-            for i,r in enumerate(self.detector.detect(img)):
-                x0,y0,x1,y1 = r
+            for i, r in enumerate(self.detector.detect(img)):
+                x0, y0, x1, y1 = r
                 # (1) Get face, (2) Convert to grayscale & (3) resize to image_size:
                 face = img[y0:y1, x0:x1]
-                face = cv2.cvtColor(face,cv2.COLOR_BGR2GRAY)
-                face = cv2.resize(face, self.model.image_size, interpolation = cv2.INTER_CUBIC)
+                face = cv2.cvtColor(face, cv2.COLOR_BGR2GRAY)
+                face = cv2.resize(face, self.model.image_size, interpolation=cv2.INTER_CUBIC)
                 # Get a prediction from the model:
                 prediction = self.model.predict(face)[0]
                 # Draw the face area in image:
-                cv2.rectangle(imgout, (x0,y0),(x1,y1),(0,255,0),2)
+                cv2.rectangle(imgout, (x0, y0), (x1, y1), (0, 255, 0), 2)
                 # Draw the predicted name (folder name...):
-                draw_str(imgout, (x0-20,y0-20), self.model.subject_names[prediction])
+                draw_str(imgout, (x0 - 20, y0 - 20), self.model.subject_names[prediction])
             cv2.imshow('videofacerec', imgout)
             # Show image & exit on escape:
             ch = cv2.waitKey(10)
             if ch & 0xff == ord('q'):
                 break
+
 
 def start():
     from optparse import OptionParser
@@ -131,15 +138,16 @@ def start():
     # Add options for training, resizing, validation and setting the camera id:
     parser = OptionParser(usage=usage)
     parser.add_option("-r", "--resize", action="store", type="string", dest="size", default="100x100",
-        help="Resizes the given dataset to a given size in format [width]x[height] (default: 100x100).")
+                      help="Resizes the given dataset to a given size in format [width]x[height] (default: 100x100).")
     parser.add_option("-v", "--validate", action="store", dest="numfolds", type="int", default=None,
-        help="Performs a k-fold cross validation on the dataset, if given (default: None).")
+                      help="Performs a k-fold cross validation on the dataset, if given (default: None).")
     parser.add_option("-t", "--train", action="store", dest="dataset", type="string", default=None,
-        help="Trains the model on the given dataset.")
+                      help="Trains the model on the given dataset.")
     parser.add_option("-i", "--id", action="store", dest="camera_id", type="int", default=0,
-        help="Sets the Camera Id to be used (default: 0).")
-    parser.add_option("-c", "--cascade", action="store", dest="cascade_filename", default="haarcascade_frontalface_alt2.xml",
-        help="Sets the path to the Haar Cascade used for the face detection part (default: haarcascade_frontalface_alt2.xml).")
+                      help="Sets the Camera Id to be used (default: 0).")
+    parser.add_option("-c", "--cascade", action="store", dest="cascade_filename",
+                      default="haarcascade_frontalface_alt2.xml",
+                      help="Sets the path to the Haar Cascade used for the face detection part (default: haarcascade_frontalface_alt2.xml).")
     # Show the options to the user:
     parser.print_help()
     print "Press [ESC] to exit the program!"
@@ -176,14 +184,14 @@ def start():
     if dataset:
         # Check if the given dataset exists:
         if not os.path.exists(dataset):
-             print "[Error] No dataset found at '%s'." % dataset_path
-             sys.exit()
+            print "[Error] No dataset found at '%s'." % dataset_path
+            sys.exit()
         # Reads the images, labels and folder_names from a given dataset. Images
         # are resized to given size on the fly:
         print "Loading dataset..."
         [images, labels, subject_names] = read_images(dataset, image_size)
         # Zip us a {label, name} dict from the given data:
-        list_of_labels = list(xrange(max(labels)+1))
+        list_of_labels = list(xrange(max(labels) + 1))
         subject_dictionary = dict(zip(list_of_labels, subject_names))
         # Get the model we want to compute:
         model = get_model(image_size=image_size, subject_names=subject_dictionary)
@@ -225,4 +233,3 @@ def start():
     App(model=model,
         camera_id=options.camera_id,
         cascade_filename=cascade_filename).run()
-

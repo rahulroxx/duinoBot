@@ -3,8 +3,8 @@ import numpy
 
 a = 0
 
-def buildDataset():
 
+def buildDataset():
     faceCascade = cv2.CascadeClassifier('haarcascade_frontalface_alt2.xml')
 
     video_capture = cv2.VideoCapture(0)
@@ -20,14 +20,14 @@ def buildDataset():
             scaleFactor=1.1,
             minNeighbors=8,
             minSize=(40, 40),
-            #flags=cv2.cv.CV_HAAR_SCALE_IMAGE
-            flags = 0
+            # flags=cv2.cv.CV_HAAR_SCALE_IMAGE
+            flags=0
         )
         keypress = cv2.waitKey(1)
 
         # Draw a rectangle around the faces
         for (x, y, w, h) in faces:
-            cv2.rectangle(gray, (x, y), (x+w, y+h), (0, 255, 0), 2)
+            cv2.rectangle(gray, (x, y), (x + w, y + h), (0, 255, 0), 2)
 
         global a
 
@@ -37,20 +37,18 @@ def buildDataset():
                 y = faces[0][1]
                 w = faces[0][2]
                 h = faces[0][3]
-                roi = frame[y:y+h, x:x+w]
-                cv2.imwrite(str(a)+'.png',roi)
-                #print faces
+                roi = frame[y:y + h, x:x + w]
+                cv2.imwrite(str(a) + '.png', roi)
+                # print faces
                 print (x)
                 print (y)
                 print (w)
                 print (h)
-                a = a+1
+                a = a + 1
         if keypress & 0xFF == ord('q'):
             break
-      # Display the resulting frame
+            # Display the resulting frame
         cv2.imshow('Video', gray)
-
-
 
     # When everything is done, release the capture
     video_capture.release()

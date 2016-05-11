@@ -6,6 +6,7 @@ import cv2
 
 cascPath = "../scripts/haarcascade_frontalface_alt2.xml"
 
+
 def Camera():
     faceCascade = cv2.CascadeClassifier(cascPath)
 
@@ -22,13 +23,13 @@ def Camera():
             scaleFactor=1.1,
             minNeighbors=8,
             minSize=(40, 40),
-            #flags=cv2.cv.CV_HAAR_SCALE_IMAGE
-            flags = 0
+            # flags=cv2.cv.CV_HAAR_SCALE_IMAGE
+            flags=0
         )
 
         # Draw a rectangle around the faces
         for (x, y, w, h) in faces:
-            cv2.rectangle(gray, (x, y), (x+w, y+h), (0, 255, 0), 2)
+            cv2.rectangle(gray, (x, y), (x + w, y + h), (0, 255, 0), 2)
 
         # Display the resulting frame
         cv2.imshow('Video', gray)
@@ -36,8 +37,7 @@ def Camera():
         if keypress & 0xFF == ord('q'):
             break
         if keypress & 0xFF == ord('b'):
-            cv2.imwrite('example.jpg',gray)
-
+            cv2.imwrite('example.jpg', gray)
 
     # When everything is done, release the capture
     video_capture.release()
