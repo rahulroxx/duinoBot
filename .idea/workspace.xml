@@ -2,23 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="244f836a-4c6d-45ce-8a20-f1638114eaa6" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/duinobot.iml" afterPath="$PROJECT_DIR$/.idea/duinobot.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/misc.xml" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/facedet/detector.py" afterPath="$PROJECT_DIR$/facedet/detector.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/helper/common.py" afterPath="$PROJECT_DIR$/helper/common.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/helper/video.py" afterPath="$PROJECT_DIR$/helper/video.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/scripts/WebcamSound.py" afterPath="$PROJECT_DIR$/scripts/WebcamSound.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/scripts/createDataset.py" afterPath="$PROJECT_DIR$/scripts/createDataset.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/scripts/facedetecti.py" afterPath="$PROJECT_DIR$/scripts/facedetecti.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/scripts/haarcascade_frontalface_alt2.xml" afterPath="$PROJECT_DIR$/scripts/haarcascade_frontalface_alt2.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/scripts/takedata.py" afterPath="$PROJECT_DIR$/scripts/takedata.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/utils/Camera.py" afterPath="$PROJECT_DIR$/utils/Camera.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/utils/SearchGoogle.py" afterPath="$PROJECT_DIR$/utils/SearchGoogle.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/utils/chatbot.py" afterPath="$PROJECT_DIR$/utils/chatbot.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/utils/chatvoice.py" afterPath="$PROJECT_DIR$/utils/chatvoice.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/utils/speak.py" afterPath="$PROJECT_DIR$/utils/speak.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/utils/wikipedia.py" afterPath="$PROJECT_DIR$/utils/wikipedia.py" />
     </list>
     <ignored path="duinobot.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -42,7 +27,7 @@
       <file leaf-file-name="createDataset.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/scripts/createDataset.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.7398119">
+            <state vertical-scroll-proportion="1.2532637">
               <caret line="33" column="0" selection-start-line="33" selection-start-column="0" selection-end-line="33" selection-end-column="0" />
               <folding />
             </state>
@@ -155,9 +140,9 @@
   </component>
   <component name="ProjectFrameBounds">
     <option name="x" value="65" />
-    <option name="y" value="-4" />
+    <option name="y" value="24" />
     <option name="width" value="1301" />
-    <option name="height" value="772" />
+    <option name="height" value="744" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <OptionsSetting value="true" id="Add" />
@@ -184,8 +169,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scratches" />
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -196,6 +179,8 @@
           </PATH>
         </subPane>
       </pane>
+      <pane id="Scratches" />
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -216,7 +201,7 @@
     <property name="FileHistory.git4idea.history.GitHistoryProvider_treeOrder2" value="2" />
     <property name="FileHistory.git4idea.history.GitHistoryProvider_treeWidth3" value="840" />
     <property name="FileHistory.git4idea.history.GitHistoryProvider_treeOrder3" value="3" />
-    <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
+    <property name="settings.editor.selected.configurable" value="settings.github" />
     <property name="settings.editor.splitter.proportion" value="0.2" />
   </component>
   <component name="RecentsManager">
@@ -573,31 +558,37 @@
       <option name="project" value="LOCAL" />
       <updated>1460054004884</updated>
     </task>
-    <option name="localTasksCounter" value="19" />
+    <task id="LOCAL-00019" summary="reformated code">
+      <created>1462966251785</created>
+      <option name="number" value="00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1462966251785</updated>
+    </task>
+    <option name="localTasksCounter" value="20" />
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="65" y="-4" width="1301" height="772" extended-state="6" />
-    <editor active="true" />
+    <frame x="65" y="24" width="1301" height="744" extended-state="6" />
+    <editor active="false" />
     <layout>
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3279483" sideWeight="0.49740162" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.25057647" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3984252" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24980783" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32784432" sideWeight="0.61544174" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33764136" sideWeight="0.3845583" order="11" side_tool="true" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.33682635" sideWeight="0.3845583" order="11" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32913387" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3984252" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32784432" sideWeight="0.61544174" order="2" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
   <component name="Vcs.Log.UiProperties">
@@ -621,7 +612,8 @@
     <MESSAGE value="added helper&#10;addded facedet from facerec&#10;added facedect script with supporters&#10;added scripts folder&#10;added arduino folder&#10;added utils&#10;cleaned face-detect.py&#10;" />
     <MESSAGE value="added helper&#10;addded facedet from facerec&#10;added facedect script with supporters&#10;added scripts folder&#10;added arduino folder&#10;added utils&#10;cleaned face-detect.py" />
     <MESSAGE value="added helper&#10;addded facedet from facerec&#10;added facedect script with supporters&#10;added scripts folder&#10;added arduino folder&#10;added utils&#10;cleaned face-detect.py&#10;fixed sys.exit()" />
-    <option name="LAST_COMMIT_MESSAGE" value="added helper&#10;addded facedet from facerec&#10;added facedect script with supporters&#10;added scripts folder&#10;added arduino folder&#10;added utils&#10;cleaned face-detect.py&#10;fixed sys.exit()" />
+    <MESSAGE value="reformated code" />
+    <option name="LAST_COMMIT_MESSAGE" value="reformated code" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1043,7 +1035,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/scripts/createDataset.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.7398119">
+        <state vertical-scroll-proportion="1.2532637">
           <caret line="33" column="0" selection-start-line="33" selection-start-column="0" selection-end-line="33" selection-end-column="0" />
           <folding />
         </state>

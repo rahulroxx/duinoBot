@@ -29,8 +29,9 @@ class SkinDetector(Detector):
         G = BGR[:, :, 1]
         R = BGR[:, :, 2]
         e1 = (R > 95) & (G > 40) & (B > 20) & (
-        (np.maximum(R, np.maximum(G, B)) - np.minimum(R, np.minimum(G, B))) > 15) & (np.abs(R - G) > 15) & (R > G) & (
-             R > B)
+            (np.maximum(R, np.maximum(G, B)) - np.minimum(R, np.minimum(G, B))) > 15) & (np.abs(R - G) > 15) & (
+             R > G) & (
+                 R > B)
         e2 = (R > 220) & (G > 210) & (B > 170) & (abs(R - G) <= 15) & (R > B) & (G > B)
         return (e1 | e2)
 
